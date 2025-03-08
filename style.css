@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+    background: #e3f2fd;
+}
+
+
+/* le header et la disposition des elements */
+
+header{
+    background-color: #02b5c9;
+display: flex;
+justify-content: space-between;
+color: #f1ee08;
+padding: 5px;
+position: relative;
+}
+
+.ul-entete {
+    display: flex;
+}
+
+
+.ul-entete  li{
+    list-style: none;
+    margin-right: 20px;
+ 
+
+}
+
+.ul-entete  li a:hover{
+    opacity: 0.2;
+    color: #fff;
+}
+
+.ul-entete  li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* le taille des elements du header */
+
+/* LE LOGO ET SON TEXTE */
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+ .logo .bxs-florist{
+    font-size: 2.5em;
+ }
+
+
+ .logo span{
+    font-size: 1.5rem;
+ }
+
+
+
+/* LA BAR DE RECHERCHE */
+
+.logo .bx-search{
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 10px;
+    background: #fff;
+    color: aqua;
+    margin: 0 0 0px 0;
+}
+
+.logo input{
+    border: none;
+    color: #02b5c9;
+}
+
+
+/* les liens du header */
+
+.ul-entete li a {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.ul-entete  .bxs-credit-card{
+    font-size: 50px;
+    border: 1px solid #fff;
+    padding: 3px 10px;
+}
+
+
+.ul-entete  .bxs-user-circle {
+    font-size: 40px;
+    color: rgb(2, 2, 2);
+    background: #27E656;
+    border: 1px solid #27E656;
+    border-radius: 50%;
+    margin: 10px 0 0 0;
+}
+
+.ul-entete  .identifie{
+    padding: 20px 0 0 0;
+}
+
+/* fin du header */
+
+
+.presentation{
+    
+    background: #02b5c9;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    margin: 1% 5%;
+    
+}
+
+.present {  
+    color: #02b5c9;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.present li a{
+    text-decoration: none;
+    background: #fff;
+    padding: 10px;
+    border-radius: 30px;
+    color: #02b5c9;
+}
+
+.present i {
+    font-size: 20px;
+}
+
+/* LES SLIDE 1*/
+
+.slider{
+    max-width: 90%;
+    margin: 0 auto;
+    border: 3px solid none;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.sliders{
+    display: flex;
+    animation: sidyellow 20s infinite ease-in-out;
+}
+
+.slide{
+    flex: 0 0 100%;
+}
+
+.slide img{
+    width: 100%;/* Adapte l'image à la largeur de son conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Évite les espaces blancs autour des images */
+}
+
+
+/* animation du slide 1*/
+
+/* 5% par transition , nombre choisi arbitrairemant 
+20%
+reste diviser par le nombre de pause
+80% / 3 * (20%) par pause
+
+*/
+
+@keyframes sidyellow {
+    0%,20%{transform: translateX(0);}
+    27.67%,46.67%{transform: translateX(-100%);}
+    53.33%,73.33%{transform: translateX(-200%);}
+    100%{transform: translateX(-300%);}
+}
+
+/* LES SLIDE 2
+
+.slider2{
+    border: 2px solid;
+    max-width: 90%;
+    margin: 20px auto;
+    
+}
+
+.slds{
+    display: flex;
+    gap: 10px;
+    
+    
+}
+
+.sd-imgage{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    flex: 0 0 100%;
+}
+
+.sd-imgage img{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+.sd-text{
+    text-align: center;
+    color: #02b5c9;
+    font-weight: bold;
+    padding-bottom: 10px;
+} */
+
+
+/* LES SLIDE 2*/
+
+.slider2{
+    border: 2px solid  none;
+    width: 90%;  
+    /*width: calc(10 * (100px + 10px));  10 éléments + les gaps */
+    margin: 20px auto;
+    overflow: hidden; /*Cache le contenu qui dépasse */
+    position: relative; /* Important si tu veux ajouter des boutons plus tard */
+}
+
+.slds{
+    display: flex;
+    gap: 10px;
+    animation: sidyellow2 10s infinite ease-in-out;
+    width: fit-content; /*On laisse le contenu décider de la largeur */
+}
+
+.sliders2{
+    width: 100px; /* Largeur fixe pour chaque élément */
+    flex: 0 0 auto; /* Ne pas grandir, ne pas rétrécir, taille automatique */
+    height: 130px;
+}
+
+.sd-imgage{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    /*flex: 0 0 100%;  On l'enlève, c'est le sliders2 qui gère */
+    width: 100px;
+    height: 100px; /*Pour que toutes les images soient de la même taille*/
+}
+
+.sd-imgage img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: contain; /*Pour que les images ne soient pas coupées*/
+}
+
+.sd-text{
+    text-align: center;
+    color: #02b5c9;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+/* animation slide2 */
+
+@keyframes sidyellow2 {
+    0%, 20%{transform: translateX(0);}
+    25%,45%{transform: translateX(-12.50%);}
+    50% , 70%{transform: translateX(-18.75%);}
+    75% , 85%{transform: translateX(-25%);}
+    90%, 110%{transform: translateX(-30.25%);}
+    120%{transform: translateX(-36.50%);}
+    /* 60%{transform: translateX(-36.50%);}
+    70%{transform: translateX(-42.75%);}
+    80%{transform: translateX(-49%);}
+    90%{transform: translateX(-54.25%);}
+    100%{transform: translateX(-60.50%);} */
+}
